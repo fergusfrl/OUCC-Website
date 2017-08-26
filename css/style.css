@@ -175,6 +175,10 @@ img {
   border: 0;
 }
 
+#company .company-about p{
+  padding-right: 80px;
+}
+
 /* FOOTER */
 #main-footer {
   background: #56a79a;
@@ -187,11 +191,13 @@ img {
 }
 
 /* ABOUT */
-/*.about .image {
-  height: 400px;
-  margin: auto;
-  overflow: hidden;
-}*/
+/*
+.about .logo {
+  height: 300px;
+  width: 300px;
+  margin-left: 37%;
+}
+*/
 
 /* EVENTS */
 .events ul li {
