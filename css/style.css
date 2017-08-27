@@ -63,6 +63,39 @@ img {
   padding-bottom: 3px;
 }
 
+/* RESPONSIVE MENU */
+.sub-nav {
+  height: 0;
+  z-index: 1;
+  position: fixed;
+  transition: 0.3s;
+  background-color: #333;
+  opacity: 0.9;
+  overflow-x: hidden;
+}
+
+.sub-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 17pxpx;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sub-nav a:hover {
+  color: #bbb;
+  transition: 0.3s;
+}
+
+#about-menu {
+  margin-left: 76%;
+}
+
+#events-menu {
+  margin-left: 82%;
+}
+
 /* SHOWCASE */
 #showcase {
   border-bottom: 1px solid #56a79a;
@@ -191,13 +224,7 @@ img {
 }
 
 /* ABOUT */
-/*
-.about .logo {
-  height: 300px;
-  width: 300px;
-  margin-left: 37%;
-}
-*/
+
 
 /* EVENTS */
 .events ul li {

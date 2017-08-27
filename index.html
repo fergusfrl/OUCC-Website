@@ -29,8 +29,8 @@
           <nav id="navbar">
             <ul>
               <li class="current"><a href="index.html">Home</a></li>
-              <li><a href="about.html">About </a></li>
-              <li><a href="events.html">Events</a></li>
+              <li><a href="about.html" onmouseover="openAboutMenu()" onmouseout="closeAboutMenu()">About </a></li>
+              <li><a href="events.html" onmouseover="openEventsMenu()" onmouseout="closeEventsMenu()">Events</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -39,6 +39,30 @@
       </div>
     </div>
   </header>
+
+  <!-- ABOUT MENU -->
+  <section class="sub-nav" id="about-menu">
+    <div class="container">
+      <div class="row">
+        <div>
+            <a href="about.html">About Us</a>
+            <a href="meet.html">Meet The Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS Menu -->
+  <section class="sub-nav" id="events-menu">
+    <div class="container">
+      <div class="row">
+        <div>
+          <a href="events.html">Calendar</a>
+          <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SHOWCASE -->
   <section id="showcase">
@@ -153,6 +177,25 @@
       </div>
     </div>
   </footer>
+
+  <!-- MENU OPENING -->
+  <script>
+    function openAboutMenu(){
+      document.getElementById('about-menu').style.height = '95px';
+    }
+
+    function closeAboutMenu(){
+      document.getElementById('about-menu').style.height = '0';
+    }
+
+    function openEventsMenu(){
+      document.getElementById('events-menu').style.height = '95px';
+    }
+
+    function closeEventsMenu(){
+      document.getElementById('events-menu').style.height = '0';
+    }
+  </script>
 
  </body>
 
