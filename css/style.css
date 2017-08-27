@@ -198,8 +198,14 @@ img {
   font-size: 13px;
 }
 
+#company ul li a, #company ul li a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
 #company input[type=text] {
   padding: 7px;
+  width: 16em;
 }
 
 #company button {
