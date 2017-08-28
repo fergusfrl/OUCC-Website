@@ -168,23 +168,17 @@ img {
 }
 
 .pimg2 {
-  /*background-image: url('../img/slideshow/Bluff.jpg');*/
   min-height: 500px;
   opacity: 0.85;
   transition: 2s;
 }
 
-.caption {
-  color: #000;
-  margin: 0;
-  transition: 2s;
-}
-
 .dot {
+  cursor: pointer;
   height: 13px;
   width: 13px;
   margin: 480px 2px 0 2px;
-  background-color: #888;
+  background-color: #fff;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 2s ease;

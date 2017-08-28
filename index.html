@@ -129,10 +129,10 @@
             <h4 id="caption" style="text-align:left"></h4>
 
             <div style="text-align:center">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+              <span class="dot" onclick="changeIndex(0)"></span>
+              <span class="dot" onclick="changeIndex(1)"></span>
+              <span class="dot" onclick="changeIndex(2)"></span>
+              <span class="dot" onclick="changeIndex(3)"></span>
             </div>
           </div>
         </div>
@@ -186,12 +186,27 @@
     var images = new Array('img/slideshow/bluff.jpg', 'img/slideshow/hollyford.jpg', 'img/slideshow/Mavora.jpg', 'img/slideshow/taieri.jpg');
     var captions = new Array('Nevis Bluff | Kawarau', 'Falls Creek | Hollyford', 'Makarora | Mavora Lakes', 'Pipeline | Taieri');
     // Starts at random photo
-    var i = Math.floor(Math.random() * images.length);
+    var index = Math.floor(Math.random() * images.length);
     var dots = document.getElementsByClassName('dot');
-    startSlideShow();
+
+    var timer = '';
+
+    startSlideShow(index);
+
+    // Changes photo when dot is clicked
+    function changeIndex(j){
+      // Removes extra class names from dots
+      for(var k = 0; k < dots.length; k++){
+        dots[k].className = dots[k].className.replace(' active', '');
+      }
+      // Clears timeout variable so slideshow starts again
+      clearTimeout(timer);
+      startSlideShow(j);
+    }
 
     // Slideshow that loops through photos in images
-    function startSlideShow(){
+    function startSlideShow(i){
+      // Shades in the correct dot
       if(i >= images.length){
         i = 0;
         dots[dots.length-1].className = dots[dots.length-1].className.replace(' active', '');
@@ -200,15 +215,17 @@
         dots[i-1].className = dots[i-1].className.replace(' active', '');
       }
       dots[i].className += ' active';
-      //$('#caption').html(captions[i])
+      // Changes photo caption
       $('#caption').fadeOut(function(){
-        $(this).text(captions[i]).fadeIn();
+        $(this).text(captions[i++]).fadeIn();
       });
-
+      // Changes backgroud image
       $('.pimg2')
-      .css('background-image', 'url("' + images[i++] + '")')
-      .fadeIn(500, function(){
-        setTimeout(startSlideShow, 5000);
+      .css('background-image', 'url("' + images[i] + '")')
+      .fadeIn(2000, function(){
+        timer = setTimeout(function(){
+          startSlideShow(i);
+        }, 7000);
       });
     }
   </script>
