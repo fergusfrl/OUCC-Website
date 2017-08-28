@@ -10,6 +10,9 @@
      <link rel="stylesheet" href="css/flexboxgrid.css">
      <link rel="stylesheet" href="css/style.css">
 
+     <!-- JAVASCRIPT -->
+     <script src="js/jquery.min.js"></script>
+
      <!-- ICON -->
      <link rel="icon" href="img/oucc.png">
  </head>
@@ -123,6 +126,14 @@
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <!-- OVERLAY INFO HERE -->
+            <h4 id="caption" style="text-align:left"></h4>
+
+            <div style="text-align:center">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -137,14 +148,10 @@
           <h4>Contact Us</h4>
           <ul>
             <li><i class="fa fa-phone"></i> (027) 211 8041</li>
-            <li><i class="fa fa-envelope"></i> theOUCC@gmail.com</li>
+            <li><i class="fa fa-envelope"></i> theoucc@gmail.com</li>
             <li><i class="fa fa-map"></i> 84 Albany Street, Dunedin, New Zealand</li>
           </ul>
         </div>
-        <!--div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 center-xs start-sm start-md start-lg company-about">
-          <h4>About Us</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores voluptatibus, pariatur perspiciatis minima aspernatur praesentium!</p>
-        </div-->
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 center-xs center-sm center-md center-lg">
           <h4>Social Media</h4>
           <ul>
@@ -173,6 +180,38 @@
       </div>
     </div>
   </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    var images = new Array('img/slideshow/bluff.jpg', 'img/slideshow/hollyford.jpg', 'img/slideshow/Mavora.jpg', 'img/slideshow/taieri.jpg');
+    var captions = new Array('Nevis Bluff | Kawarau', 'Falls Creek | Hollyford', 'Makarora | Mavora Lakes', 'Pipeline | Taieri');
+    // Starts at random photo
+    var i = Math.floor(Math.random() * images.length);
+    var dots = document.getElementsByClassName('dot');
+    startSlideShow();
+
+    // Slideshow that loops through photos in images
+    function startSlideShow(){
+      if(i >= images.length){
+        i = 0;
+        dots[dots.length-1].className = dots[dots.length-1].className.replace(' active', '');
+      }
+      if(i > 0){
+        dots[i-1].className = dots[i-1].className.replace(' active', '');
+      }
+      dots[i].className += ' active';
+      //$('#caption').html(captions[i])
+      $('#caption').fadeOut(function(){
+        $(this).text(captions[i]).fadeIn();
+      });
+
+      $('.pimg2')
+      .css('background-image', 'url("' + images[i++] + '")')
+      .fadeIn(500, function(){
+        setTimeout(startSlideShow, 5000);
+      });
+    }
+  </script>
 
  </body>
 

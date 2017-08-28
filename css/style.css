@@ -3,6 +3,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: 'Open-sans', sans-serif;
   font-size: 17px;
   line-height: 1.5em;
@@ -104,7 +105,7 @@ img {
 }
 
 #showcase .row {
-  height: 600px;
+  height: 91vh;
 }
 
 #showcase h1 {
@@ -162,14 +163,35 @@ img {
 .pimg1 {
   background-image: url('../img/OUCC-Leith-Photo.jpg');
   background-position: bottom;
-  min-height: 100%;
+  /*min-height: 91vh;*/
   opacity: 0.85;
 }
 
 .pimg2 {
-  background-image: url('../img/Mavora.jpg');
+  /*background-image: url('../img/slideshow/Bluff.jpg');*/
   min-height: 500px;
-  opacity: 0.95;
+  opacity: 0.85;
+  transition: 2s;
+}
+
+.caption {
+  color: #000;
+  margin: 0;
+  transition: 2s;
+}
+
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 480px 2px 0 2px;
+  background-color: #888;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 2s ease;
+}
+
+.active {
+  background-color: #56a79a;
 }
 
 /* COMPANY */
