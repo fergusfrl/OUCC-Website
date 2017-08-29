@@ -255,14 +255,14 @@ img {
   padding: 10px;
 }
 
-.events ul li:nth-child(odd) {
-  background: #333;
-  color: #fff;
+.fc-today {
+  border-top: 4px solid #56a79a !important;
+  background-color: none;
 }
 
-.events ul li:nth-child(even) {
-  background: #56a79a;
-  color: #fff;
+.events h4 {
+  color: #000;
+  margin: 22px;
 }
 
 /* BLOG */

@@ -133,11 +133,18 @@
     $('#calendar').fullCalendar({
       googleCalendarApiKey: 'AIzaSyDUjzP9ebd5UFO4-c3BtG_jxiUGZWZ9S1M',
       events: {
-        googleCalendarId: 'theoucc@gmail.com'
+        googleCalendarId: 'theoucc@gmail.com',
+        rendering: 'background'
       },
       eventClick: function(event) {
         if(event.url) {
           return false;
+        }
+      },
+      eventColor: '#56a79a',
+      eventRender: function(event, element) {
+        if(event.source.rendering == 'background') {
+          element.append('<h4>' + event.title + '</h4>');
         }
       }
     });
