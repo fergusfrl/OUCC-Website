@@ -11,6 +11,7 @@
      <link rel="stylesheet" href="css/style.css">
 
      <!-- JAVASCRIPT -->
+     <script src=js/main.js></script>
      <script src="js/jquery.min.js"></script>
 
      <!-- ICON -->
@@ -22,10 +23,10 @@
   <header id="main-header">
     <div class="conatiner">
       <div class="row center-xs center-sm center-md end-lg middle-xs middle-sm middle-md middle-lg">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-          <h1><span class="primary-text">Otago University Canoe Club</span></h1>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 start-lg">
+          <h1 id="title"><span class="primary-text">Otago University Canoe Club</span></h1>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
           <nav id="navbar">
             <ul>
               <li class="current"><a class="main-nav" href="index.html">Home</a></li>
@@ -77,6 +78,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <h2>Services</h2>
           <p>What We Do</p>
+
           <!-- ICON ROW 1 -->
           <div class="row center-xs center-sm center-md center-lg">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg4">
@@ -125,9 +127,7 @@
       <div class="container">
         <div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <!-- OVERLAY INFO HERE -->
             <h4 id="caption" style="text-align:left"></h4>
-
             <div style="text-align:center">
               <span class="dot" onclick="changeIndex(0)"></span>
               <span class="dot" onclick="changeIndex(1)"></span>
@@ -228,6 +228,34 @@
         }, 15000);
       });
     }
+
+    // Change name on click
+    /*var o = new Array('Organically');
+    var u = new Array('Using');
+    var adjC = new Array('Celestrial');
+    var nounC = new Array('Camels');
+
+    var a = Math.floor(Math.random() * o.length);
+    var b = Math.floor(Math.random() * u.length);
+    var c = Math.floor(Math.random() * adjC.length);
+    var d = Math.floor(Math.random() * nounC.length);
+
+    var str = o[a] + " " u[b] + " " + adjC[c] + " " + nounC[d];*/
+
+
+    $('h1').click(function(){
+      var o = ['Organically', 'Openly', 'Opressingly', 'Optionily'];
+      var u = ['Using', 'Underating', 'Undulating', 'Unexpected', 'Uplifting'];
+      var firstC = ['Celestrial', 'Candied', 'Candid', 'Crazy'];
+      var lastC = ['Camels', 'Centaurs', 'Charmeleons', 'Children'];
+      var a = Math.floor(Math.random() * o.length);
+      var b = Math.floor(Math.random() * u.length);
+      var c = Math.floor(Math.random() * firstC.length);
+      var d = Math.floor(Math.random() * lastC.length);
+
+      var str = o[a] + " " + u[b] + " " + firstC[c] + " " + lastC[d];
+      $('#title').html('<span class="primary-text">' + str + '</span>');
+    });
   </script>
 
  </body>

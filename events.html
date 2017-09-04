@@ -16,6 +16,7 @@
     <script src="js/moment.min.js"></script>
     <script src="js/fullcalendar.js"></script>
     <script src="js/gcal.js"></script>
+    <script src=js/main.js></script>
 
     <!-- ICON -->
     <link rel="icon" href="img/oucc.png">
@@ -48,7 +49,7 @@
                   <a href="events.html" class="dropdown-link main-nav">Events</a>
                   <div class="dropdown-content">
                     <a href="events.html">Calendar</a>
-                    <a href="#">Sign Up</a>
+                    <a href="#" onclick="popup()">Sign Up</a>
                   </div>
                 </div>
               </li>
@@ -133,20 +134,22 @@
     $('#calendar').fullCalendar({
       googleCalendarApiKey: 'AIzaSyDUjzP9ebd5UFO4-c3BtG_jxiUGZWZ9S1M',
       events: {
-        googleCalendarId: 'theoucc@gmail.com',
-        rendering: 'background'
+        googleCalendarId: 'theoucc@gmail.com'//,
+        //rendering: 'background'
       },
       eventClick: function(event) {
         if(event.url) {
           return false;
         }
       },
+      eventCursor: 'arrow',
       eventColor: '#56a79a',
-      eventRender: function(event, element) {
+      eventTextColor: '#000'
+      /*eventRender: function(event, element) {
         if(event.source.rendering == 'background') {
           element.append('<h4>' + event.title + '</h4>');
         }
-      }
+      }*/
     });
   });
  </script>

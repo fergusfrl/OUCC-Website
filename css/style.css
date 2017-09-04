@@ -34,6 +34,10 @@ img {
   border-bottom: 1px solid #56a79a;
 }
 
+#main-header h1 {
+  cursor: pointer;
+}
+
 /* LOGO NOT CURRENTLY IN USE
 #main-header .logo {
   height: 50px;
@@ -258,6 +262,13 @@ img {
 .fc-today {
   border-top: 4px solid #56a79a !important;
   background-color: none;
+}
+
+.fc-event {
+  font-size: 18px !important;
+  text-align: center;
+  cursor: default !important;
+  opacity: 0.8;
 }
 
 .events h4 {
